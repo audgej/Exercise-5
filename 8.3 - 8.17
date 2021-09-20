@@ -1,0 +1,40 @@
+#8.3
+def make_shirt(size, message):
+    """Display information about the shirt."""
+    print(f"\nThis  is a size {size} tshirt that says {message}.")
+
+make_shirt('medium','Go tigers!')
+
+#8.4
+def make_shirt(message, size='large', size_2='medium',):
+    """Display information about the shirt."""
+    print(f"\nThis is a size {size} tshirt that says {message}.")
+    print(f"\nThis is a size {size_2} tshirt that says {message}.")
+
+make_shirt(message='I love Python', )
+make_shirt(message='go tigers!')
+
+
+#8.5
+def describe_city(city, country='Iceland'):
+    """Display information about the city"""
+    print(f"\n{city.title()} is in {country.title()}.")
+
+describe_city(city='Reyjavik')
+describe_city(city='Vik')
+describe_city(city='D.C',country='United States')
+
+#8.6
+def get_formatted_location(city, country):
+        """Return location, neatly formatted."""
+        location = f"{city}, {country}"
+        return location.title()
+
+place = get_formatted_location('Santiago','Chile')
+print(place)
+place = get_formatted_location('Sydney','Australia')
+print(place)
+place = get_formatted_location('Vik','Iceland')
+print(place)
+
+
