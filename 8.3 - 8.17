@@ -38,3 +38,15 @@ place = get_formatted_location('Vik','Iceland')
 print(place)
 
 
+EXTRAAA:::
+def get_formatted_location(city, country):
+        """Return location, neatly formatted."""
+        location = f"{city}, {country}"
+        return location.title()
+
+place = get_formatted_location('Santiago','Chile')
+print(place)
+place = get_formatted_location('Sydney','Australia')
+print(place)
+place = get_formatted_location('Vik','Iceland')
+print(place)
