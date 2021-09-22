@@ -37,16 +37,110 @@ print(place)
 place = get_formatted_location('Vik','Iceland')
 print(place)
 
+#8.7:
+def make_album(artist_name,album_title):
+    """Return a dictionary of information about a person."""
+    album={'artist': artist_name, 'title': album_title}
+    return album
 
-EXTRAAA:::
-def get_formatted_location(city, country):
-        """Return location, neatly formatted."""
-        location = f"{city}, {country}"
-        return location.title()
+music = make_album('Kanye West','Jesus is King')
+print(music)
+music = make_album('Taylor Swift','Red')
+print(music)
+music = make_album('Matt Maeson','Bank on a Funeral')
+print(music)
 
-place = get_formatted_location('Santiago','Chile')
-print(place)
-place = get_formatted_location('Sydney','Australia')
-print(place)
-place = get_formatted_location('Vik','Iceland')
-print(place)
+#8.7 pt 2
+def make_album(artist_name,album_title,songs=None):
+    """Return a dictionary of information about a person."""
+    album={'artist': artist_name, 'title': album_title}
+    if songs:
+        album['songs']= songs
+    return album
+
+music = make_album('Kanye West','Jesus is King', songs=11)
+print(music)
+music = make_album('Taylor Swift','Red', songs=22)
+print(music)
+music = make_album('Matt Maeson','Bank on a Funeral')
+print(music)
+
+#8.8
+def get_make_album(artist_name,album_title):
+    """Return a album, neatly formatted."""
+    album= f"{artist_name}, {album_title}"
+    return album.title()
+
+while True:
+    print("\nEnter the album's artist:")
+    print("(enter 'q' at any time to quit)")
+
+    a_name = input("Artist name:")
+    if a_name == 'q':
+        break
+
+    t_name = input("Album title:")
+    if t_name == 'q':
+        break
+
+make_album = get_make_album(a_name, t_name)
+print(f"\n{make_album}")
+
+#8.9:
+def show_messages(texts):
+    """print these short messages"""
+    for text in texts:
+        msg = f"Text Messages: {text}"
+        print(msg)
+
+messages = ['Cool beans','Howdy Partner','Sup Dude']
+show_messages(messages)
+
+#8.10
+send_messages =['Cool beans','Howdy Partner','Sup Dude']
+sent_messages = []
+
+while send_messages:
+    current_message = send_messages.pop()
+    print(f"Sending messages:{send_messages}")
+    sent_messages.append(current_message)
+print("The following messages have been sent:")
+for sent_message in sent_messages:
+    print(sent_message)
+    
+8.11: I couldn't figure this one out
+function_name(send_messages[:])
+
+8.12:
+def make_sandwich(*toppings):
+    """Print the list of toppings that have been requested."""
+    print(toppings)
+    
+make_sandwich('turkey','ham','mustard')
+make_sandwich('mayo','lettuce','tomato','chicken')
+make_sandwich('tuna','mayo')
+
+#8.13:
+def build_profile(first, last, **user_info):
+    """build a dicstionary containing everything we know about user."""
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+
+user_profile = build_profile('audrey','johnson',
+                             location='Anderson',
+                            field='criminal justice',
+                             age='21')
+print(user_profile)
+
+#8.14
+def make_car(manufacturer, model, **car_info):
+    """build a dictionary containing everything we know about user."""
+    car_info['manufacturer'] = manufacturer
+    car_info['model'] = model
+    return car_info
+
+car = make_car('Dodge','Ram 500', year='2014', color='black')
+print(car)
+
+8.15
